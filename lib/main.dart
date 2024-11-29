@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:osscam_project/feature/auth/login_page/login_page.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'core/config/service_locater.dart';
@@ -10,8 +11,8 @@ import 'feature/auth/signup_page/signup_page.dart';
 
 
 void main() {
-  // WidgetsFlutterBinding.ensureInitialized();
-  // setup();
+  WidgetsFlutterBinding.ensureInitialized();
+  setup();
   runApp( const MyApp());
 }
 
@@ -20,10 +21,10 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print(getIt.get<SharedPreferences>().getString("token"));
+    // print(getIt.get<SharedPreferences>().getString("token"));
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-       home: SignUpPage(),
+       home: LoginPage(),
     );
   }
 }

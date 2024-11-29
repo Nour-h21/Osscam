@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:osscam_project/core/constants/widgets/filled_button.dart';
-import 'package:osscam_project/core/constants/widgets/password_visibility.dart';
+import 'package:osscam_project/core/constants/widgets/password/password_visibility.dart';
 import 'package:osscam_project/feature/home/ui/home_page/home_page.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -8,6 +8,7 @@ import '../../../core/config/service_locater.dart';
 import '../../../core/constants/colors/colors.dart';
 import '../../../core/constants/strings/strings.dart';
 import '../../../core/constants/style/text_style.dart';
+import '../../../core/constants/widgets/checkbox/checkbox.dart';
 import '../../../core/constants/widgets/text_field.dart';
 import '../login_page/login_page.dart';
 import 'service_signup.dart';
@@ -116,19 +117,9 @@ class _SignUpPageState extends State<SignUpPage> {
                         Padding(
                           padding: const EdgeInsets.only(top: 30),
                           child: Row(children: [
-                            Checkbox(
-                              value: isChecked,
+                             MyCheckBox(
                               activeColor: AppColors().primary,
                               checkColor: AppColors().white,
-                              onChanged: (bool? newValue) {
-                                setState(() {
-                                  isChecked = newValue;
-                                  getIt
-                                      .get<SharedPreferences>()
-                                      .setBool("remeberMe", newValue = true);
-                                });
-                                print(isChecked);
-                              },
                             ),
                             const SizedBox(
                               width: 3,

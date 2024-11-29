@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:osscam_project/feature/auth/bloc_pass/password_visibility_bloc.dart';
+import 'package:osscam_project/core/constants/widgets/password/bloc_pass/password_visibility_bloc.dart';
 
-import '../colors/colors.dart';
+import '../../colors/colors.dart';
 
 class MyPasswordVisibility extends StatelessWidget {
   const MyPasswordVisibility({super.key});
